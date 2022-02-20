@@ -14,7 +14,7 @@ export const ChatProvider = ({ children, authUser }) => {
   };
 
   const deleteChatClick = chat => {
-    const isAdmin = chat.admin === chatConfig.userName;
+    const isAdmin = chat.admin.username === chatConfig.userName;
 
     if (
       isAdmin &&

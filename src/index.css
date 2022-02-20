@@ -91,6 +91,11 @@ body {
   padding: 8px;
 }
 
+.chats-loading {
+  height: 100%;
+  position: relative;
+}
+
 .chat-container {
   flex: 1;
   height: 100%;
@@ -134,4 +139,118 @@ body {
 .left-rail {
   height: 100%;
   width: 300px;
+  background-color: #946988;
+}
+
+.left-rail-header {
+  height: 100px;
+  display: flex;
+  padding: 10px;
+  position: relative;
+  align-items: center;
+  background-color: #161616;
+  box-shadow: 0px 0px 2px black;
+}
+
+.left-rail-header .empty-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.chat-list-container {
+  overflow-y: auto;
+  height: calc(100% - 150px);
+}
+
+.no-chats-yet {
+  padding: 15px;
+}
+
+.create-chat-button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 0px;
+  background-color: #030a24;
+}
+
+.chat-list-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+}
+
+.empty-avatar {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  border-radius: 100%;
+  justify-content: center;
+  background-color: #4d515d;
+}
+
+.chat-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-list-item {
+  display: flex;
+  height: 75px;
+  width: 100%;
+  padding: 10px;
+
+  align-items: center;
+  box-shadow: 0px 0px 2px black;
+  justify-content: space-between;
+}
+
+.chat-list-item-content {
+  flex: 1;
+  display: flex;
+  cursor: pointer;
+  color: #f2f2f2;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.chat-list-item .selected,
+.chat-list-item:hover {
+  background-color: rgba(100, 72, 92, 0.5);
+}
+
+.selected-chat-item {
+  background-color: #64485c;
+}
+
+.chat-item-delete {
+  width: 35px;
+  cursor: pointer;
+  text-align: right;
+  visibility: hidden;
+}
+
+.chat-list-item:hover .chat-item-delete {
+  visibility: visible;
+}
+
+.chat-item-delete:hover {
+  color: #cd0000;
+}
+
+.chat-list-preview {
+  margin-left: 10px;
+}
+
+.preview-message {
+  font-size: 12px;
+}
+
+.preview-username {
+  font-size: 16px;
 }
