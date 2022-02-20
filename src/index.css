@@ -23,7 +23,7 @@ body {
   padding: 25px;
   max-width: 100%;
   border-radius: 10px;
-  background-color: #83676b;
+  background-color: #9c7b80;
   box-shadow: 0px 0px 10px black;
 }
 
@@ -66,13 +66,13 @@ body {
 }
 
 .auth-link {
-  color: gray;
+  color: #5c5caa;
   cursor: pointer;
   font-weight: bold;
 }
 
 .auth-link:hover {
-  color: #5c5caa;
+  color: #ffffff;
 }
 
 .error {
@@ -80,4 +80,9 @@ body {
   font-size: 16px;
   background-color: #000000;
   width: fit-content;
+}
+
+.error.server-error {
+  margin-top: 8px;
+  padding: 8px;
 }
