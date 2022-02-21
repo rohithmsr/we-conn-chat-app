@@ -43,7 +43,6 @@ export const ChatProvider = ({ children, authUser }) => {
         .collection('chatUsers')
         .doc(authUser.uid)
         .onSnapshot(snap => {
-          console.log(snap.data());
           setChatConfig({
             userSecret: authUser.uid,
             avatar: snap.data().avatar,

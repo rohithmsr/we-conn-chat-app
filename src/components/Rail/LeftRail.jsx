@@ -2,6 +2,7 @@ import { Loader } from 'semantic-ui-react';
 import { useChat } from '../../hooks/useChat';
 import { useResolved } from '../../hooks/useResolved';
 import ChatList from '../Chat/ChatList';
+import UserProfile from './UserProfile';
 
 const LeftRail = () => {
   const { myChats, createChatClick } = useChat();
@@ -9,6 +10,7 @@ const LeftRail = () => {
 
   return (
     <div className="left-rail">
+      <UserProfile />
       {chatsResolved ? (
         <>
           {!!myChats.length ? (

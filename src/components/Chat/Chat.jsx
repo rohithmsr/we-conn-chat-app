@@ -15,10 +15,6 @@ export const Chat = () => {
     selectChatClick,
   } = useChat();
 
-  // useEffect(() => {
-  //   console.log('My Chats: ', myChats);
-  // }, [myChats]);
-
   return (
     <>
       <LeftRail />

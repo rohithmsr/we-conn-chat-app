@@ -1,3 +1,12 @@
+:root {
+  --black: #0b0c10;
+  --elephant: #1f2833;
+  --cement: #c5c6c7;
+  --cyan: #66fcf1;
+  --darkpink: #946988;
+  ---dsblue: #45a29e;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,13 +22,13 @@ body {
 
 .app {
   width: 100vw;
-  color: white;
+  color: var(--black);
   height: 100vh;
   display: flex;
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  background-color: #64485c;
+  background-color: var(--darkpink);
 }
 
 .auth-form {
@@ -27,8 +36,8 @@ body {
   padding: 25px;
   max-width: 100%;
   border-radius: 10px;
-  background-color: #9c7b80;
-  box-shadow: 0px 0px 10px black;
+  background-color: var(--cement);
+  box-shadow: 0px 0px 10px var(--black);
 }
 
 .auth-form label {
@@ -40,7 +49,7 @@ body {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--black);
   background-color: #d2d2d2;
 }
 
@@ -49,9 +58,9 @@ body {
   border-radius: 3px;
   outline: none;
   border: none;
-  color: white;
+  color: var(--cement);
   cursor: pointer;
-  background-color: #030a24;
+  background-color: var(---dsblue);
 }
 
 .auth-form button:hover {
@@ -61,7 +70,7 @@ body {
 .auth-form button:disabled {
   color: darkgray;
   cursor: not-allowed;
-  background-color: gray;
+  background-color: #808080;
 }
 
 .auth-link-container {
@@ -70,13 +79,13 @@ body {
 }
 
 .auth-link {
-  color: #5c5caa;
+  color: #1515dd;
   cursor: pointer;
   font-weight: bold;
 }
 
 .auth-link:hover {
-  color: #ffffff;
+  color: var(---dsblue);
 }
 
 .error {
@@ -113,13 +122,14 @@ body {
 .no-chat-selected {
   display: flex;
   font-size: 28px;
+  font-weight: 700;
   padding: 25px;
-  color: white;
+  color: var(--cyan);
   align-self: center;
   align-items: center;
   border-radius: 10px;
   justify-content: center;
-  background-color: #9c7b80;
+  background-color: var(--elephant);
   box-shadow: 0px 0px 3px black;
 
   -webkit-touch-callout: none;
@@ -139,7 +149,7 @@ body {
 .left-rail {
   height: 100%;
   width: 300px;
-  background-color: #946988;
+  background-color: var(--darkpink);
 }
 
 .left-rail-header {
@@ -148,7 +158,7 @@ body {
   padding: 10px;
   position: relative;
   align-items: center;
-  background-color: #161616;
+  background-color: var(--elephant);
   box-shadow: 0px 0px 2px black;
 }
 
@@ -168,13 +178,14 @@ body {
 
 .create-chat-button {
   width: 100%;
-  height: 50px;
+  height: 60px;
   border: none;
   outline: none;
-  color: white;
+  color: var(--cyan);
+  font-size: 20px;
   cursor: pointer;
   border-radius: 0px;
-  background-color: #030a24;
+  background-color: var(--elephant);
 }
 
 .chat-list-avatar {
@@ -221,11 +232,11 @@ body {
 
 .chat-list-item .selected,
 .chat-list-item:hover {
-  background-color: rgba(100, 72, 92, 0.5);
+  background-color: #64485c;
 }
 
 .selected-chat-item {
-  background-color: #64485c;
+  background-color: rgba(100, 72, 92, 0.5);
 }
 
 .chat-item-delete {
@@ -268,13 +279,12 @@ body {
   padding-left: 25px;
   padding-right: 25px;
   align-items: center;
-  background-color: #030a24;
-  background-color: #292b31;
+  background-color: var(--darkpink);
   justify-content: space-between;
 }
 
 .chat-header-text {
-  color: gray;
+  color: var(--elephant);
   font-size: 16px;
   font-weight: bold;
 }
@@ -346,10 +356,12 @@ body {
 
 .chat-input {
   flex: 1;
+  padding-left: 20px;
   border: none;
   height: 100%;
   outline: none;
   color: #f2f2f2;
+  /* color: var(--cement); */
   caret-color: white;
   background-color: transparent;
 }
@@ -395,7 +407,7 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
-  background-color: #030a24;
+  background-color: var(--cement);
 }
 
 .no-messages-yet {
@@ -451,4 +463,37 @@ body {
 .message-text {
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+.profile-box-item {
+  background-color: var(--elephant);
+}
+
+.profile-box-content {
+  flex: 1;
+  padding: 8px;
+  display: flex;
+  color: var(--cyan);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-box-preview {
+  margin-left: 10px;
+}
+
+.profile-box-email {
+  font-size: 12px;
+}
+
+.profile-box-username {
+  font-size: 20px;
+}
+
+.profile-box-icon {
+  position: relative;
+  font-size: 28px;
+  text-align: right;
+  cursor: pointer;
+  top: 20px;
 }

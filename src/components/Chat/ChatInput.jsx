@@ -21,12 +21,6 @@ const ChatInput = () => {
   return (
     <>
       <div className="chat-controls">
-        <div
-          onClick={() => console.log('Add Attachment Click')}
-          className="attachment-icon"
-        >
-          <Icon name="attach" color="grey" />
-        </div>
         <input
           value={chatInputText}
           className="chat-input"
