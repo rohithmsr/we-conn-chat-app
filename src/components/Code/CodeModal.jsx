@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import FormField from '../FormField/FormField';
 
 const Backdrop = props => {
-  return <div className="backdrop" onClick={props.onConfirm} />;
+  return <div className="backdrop" onClick={props.onExit} />;
 };
 
 const ModalOverlay = props => {
@@ -42,14 +42,10 @@ const ModalOverlay = props => {
                 spellCheck="false"
               />
               <div className="code-form-buttons">
-                <button type="button" onClick={props.onConfirm}>
+                <button type="button" onClick={props.onExit}>
                   Cancel
                 </button>
-                <button
-                  onClick={props.onConfirm}
-                  type="button"
-                  disabled={!isValid || isSubmitting}
-                >
+                <button type="submit" disabled={!isValid || isSubmitting}>
                   Send
                 </button>
               </div>
@@ -65,14 +61,15 @@ const CodeModal = props => {
   return (
     <>
       {ReactDOM.createPortal(
-        <Backdrop onConfirm={props.onConfirm} />,
+        <Backdrop onExit={props.onExit} />,
         document.getElementById('backdrop-root'),
       )}
       {ReactDOM.createPortal(
         <ModalOverlay
           title={props.title}
           message={props.message}
-          onConfirm={props.onConfirm}
+          onExit={props.onExit}
+          onSubmit={props.onSubmit}
         />,
         document.getElementById('overlay-root'),
       )}

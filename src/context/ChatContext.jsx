@@ -1,12 +1,6 @@
 import { fb } from '../service';
 import { createContext, useEffect, useState } from 'react';
-import {
-  newChat,
-  leaveChat,
-  deleteChat,
-  getMessages,
-  sendMessage,
-} from 'react-chat-engine';
+import { newChat, leaveChat, deleteChat, getMessages } from 'react-chat-engine';
 
 export const ChatContext = createContext();
 

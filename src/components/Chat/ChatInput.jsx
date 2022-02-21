@@ -20,7 +20,28 @@ const ChatInput = () => {
     }
   };
 
-  const codeHandler = () => {
+  const codeSubmitHandler = (
+    { filename, codes, language },
+    { setSubmitting },
+  ) => {
+    if (filename.length > 0 && codes.length > 0) {
+      const sendingFileName = filename.replace('$', '_');
+      const sendingCode = encodeURIComponent(`<pre>${codes}</pre>`);
+      const sendingText = `<code>${sendingFileName}.${language} = Code snippet..........................</code>$${sendingFileName}$${language}$${sendingCode}`;
+
+      if (selectedChat) {
+        sendMessage(chatConfig, selectedChat.id, {
+          text: sendingText,
+          files: [],
+        });
+      }
+    }
+
+    setSubmitting(false);
+    setCodeModalOpen(false);
+  };
+
+  const openModal = () => {
     setCodeModalOpen(true);
   };
 
@@ -31,10 +52,10 @@ const ChatInput = () => {
   return (
     <>
       {codeModalOpen && (
-        <CodeModal onConfirm={closeModal} onSubmit={closeModal} />
+        <CodeModal onExit={closeModal} onSubmit={codeSubmitHandler} />
       )}
       <div className="chat-controls">
-        <div onClick={codeHandler} className="attachment-icon">
+        <div onClick={openModal} className="attachment-icon">
           <Icon name="code" color="grey" />
         </div>
         <input

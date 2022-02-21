@@ -632,3 +632,41 @@ body {
 .code-form-buttons button {
   margin-left: 16px;
 }
+
+/* Code Snippet */
+
+.code-wrapper {
+  width: fit-content;
+  min-width: 20%;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 0.5em;
+  color: var(--elephant);
+  background-color: var(--darkpink);
+}
+
+.code-parent {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.copy-button-holder {
+  position: absolute;
+  right: 4px;
+  top: 16px;
+  font-size: 20px;
+  background: transparent;
+  border: none transparent;
+  color: #f4f4f4;
+}
+
+.copy-button-holder:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.copy-button-holder:active {
+  color: var(--darkpink);
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@ import { useChat } from '../../hooks/useChat';
 import { ChatAvatar } from '../Chat/ChatAvatar';
 import { groupMessages } from '../../utils';
 import { useScrollToBottom } from '../../hooks/useScrollToBottom';
+import CodeMessage from '../Code/CodeMessage';
 
 const MessageList = () => {
   const { selectedChat } = useChat();
@@ -27,19 +28,15 @@ const MessageList = () => {
             </div>
 
             <div className="message-content">
-              {m.map((individualMessage, index) => (
-                <div key={index}>
-                  <div className="message-text">{individualMessage.text}</div>
-
-                  {!!individualMessage.attachments.length && (
-                    <img
-                      className="message-image"
-                      src={individualMessage.attachments[0].file}
-                      alt={individualMessage.id + '-attachment'}
-                    />
-                  )}
-                </div>
-              ))}
+              {m.map((individualMessage, index) =>
+                individualMessage?.text.startsWith('<code>') ? (
+                  <CodeMessage key={index} message={individualMessage.text} />
+                ) : (
+                  <div key={index}>
+                    <div className="message-text">{individualMessage.text}</div>
+                  </div>
+                ),
+              )}
             </div>
           </div>
         ))
