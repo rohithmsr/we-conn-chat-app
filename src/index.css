@@ -197,6 +197,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 100%;
+  cursor: pointer;
 }
 
 .empty-avatar {
@@ -204,10 +205,12 @@ body {
   height: 48px;
   display: flex;
   font-size: 24px;
+  font-style: normal;
   align-items: center;
   border-radius: 100%;
   justify-content: center;
   background-color: #161616;
+  color: var(--cement);
 }
 
 .chat-list {
@@ -523,4 +526,22 @@ body {
   transform: translateY(-8px);
   color: var(--cyan);
   cursor: default;
+}
+
+.user-loading {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.profile-box-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+}
+
+.profile-box-avatar___icon {
+  cursor: pointer;
 }
