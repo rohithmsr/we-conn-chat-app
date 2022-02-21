@@ -120,8 +120,9 @@ body {
 }
 
 .no-chat-selected {
+  width: 80%;
   display: flex;
-  font-size: 28px;
+  font-size: 1.5em;
   font-weight: 700;
   padding: 25px;
   color: var(--cyan);
@@ -147,6 +148,9 @@ body {
 }
 
 .left-rail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   height: 100%;
   width: 300px;
   background-color: var(--darkpink);
@@ -177,6 +181,7 @@ body {
 }
 
 .create-chat-button {
+  position: relative;
   width: 100%;
   height: 60px;
   border: none;
@@ -215,7 +220,7 @@ body {
   height: 75px;
   width: 100%;
   padding: 10px;
-
+  cursor: pointer;
   align-items: center;
   box-shadow: 0px 0px 2px black;
   justify-content: space-between;
@@ -224,7 +229,6 @@ body {
 .chat-list-item-content {
   flex: 1;
   display: flex;
-  cursor: pointer;
   color: #f2f2f2;
   align-items: center;
   justify-content: flex-start;
@@ -411,8 +415,20 @@ body {
 }
 
 .no-messages-yet {
-  font-size: 24px;
-  margin-top: 25px;
+  font-size: 48px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.empty-room {
+  position: absolute;
+  color: var(---dsblue);
+  background-color: var(--elephant);
+  text-align: center;
+  padding: 20px;
+  margin: 10%;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .chat-messages {
@@ -467,6 +483,7 @@ body {
 
 .profile-box-item {
   background-color: var(--elephant);
+  padding: 8px;
 }
 
 .profile-box-content {
@@ -491,9 +508,19 @@ body {
 }
 
 .profile-box-icon {
-  position: relative;
+  padding: 16px 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  float: right;
   font-size: 28px;
-  text-align: right;
   cursor: pointer;
-  top: 20px;
+}
+
+.profile-box-icon span {
+  font-size: 8px;
+  padding: 0 4px;
+  text-transform: uppercase;
+  transform: translateY(-8px);
+  color: var(--cyan);
+  cursor: default;
 }

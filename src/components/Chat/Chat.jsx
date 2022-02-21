@@ -31,15 +31,13 @@ export const Chat = () => {
             if (chat.admin.username === chatConfig.userName) {
               selectChatClick(chat);
             }
-            setMyChats([...myChats, chat].sort((a, b) => a.id - b.id));
+            setMyChats([chat, ...myChats]);
           }}
           onDeleteChat={chat => {
             if (selectedChat?.id === chat.id) {
               setSelectedChat(null);
             }
-            setMyChats(
-              myChats.filter(c => c.id !== chat.id).sort((a, b) => a.id - b.id),
-            );
+            setMyChats(myChats.filter(c => c.id !== chat.id));
           }}
           onNewMessage={(chatId, message) => {
             if (selectedChat && chatId === selectedChat.id) {
@@ -54,9 +52,7 @@ export const Chat = () => {
               ...chatThatMessageBelongsTo,
               last_message: message,
             };
-            setMyChats(
-              [updatedChat, ...filteredChats].sort((a, b) => a.id - b.id),
-            );
+            setMyChats([updatedChat, ...filteredChats]);
           }}
         />
       )}
@@ -76,7 +72,9 @@ export const Chat = () => {
                 className="no-chat-selected-icon"
                 alt="no-chat-selected-icon"
               />
-              Select A Chat
+              #WeConn <br />
+              <br />
+              SELECT A CHAT
             </div>
           )}
         </div>

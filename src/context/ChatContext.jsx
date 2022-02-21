@@ -1,6 +1,12 @@
 import { fb } from '../service';
 import { createContext, useEffect, useState } from 'react';
-import { newChat, leaveChat, deleteChat, getMessages } from 'react-chat-engine';
+import {
+  newChat,
+  leaveChat,
+  deleteChat,
+  getMessages,
+  sendMessage,
+} from 'react-chat-engine';
 
 export const ChatContext = createContext();
 
@@ -21,7 +27,10 @@ export const ChatProvider = ({ children, authUser }) => {
       window.confirm('Are you sure you want to delete this chat?')
     ) {
       deleteChat(chatConfig, chat.id);
-    } else if (window.confirm('Are you sure you want to leave this chat?')) {
+    } else if (
+      !isAdmin &&
+      window.confirm('Are you sure you want to leave this chat?')
+    ) {
       leaveChat(chatConfig, chat.id, chatConfig.userName);
     }
   };

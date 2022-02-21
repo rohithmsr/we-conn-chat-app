@@ -1,7 +1,8 @@
 import { useChat } from '../../hooks/useChat';
 import { ChatAvatar } from './ChatAvatar';
 import { Icon } from 'semantic-ui-react';
-import { joinUsernames, notMe } from '../../utils';
+import { notMe, getGroupChatNames } from '../../utils';
+import { useEffect } from 'react';
 
 const ChatList = () => {
   const {
@@ -12,19 +13,25 @@ const ChatList = () => {
     deleteChatClick,
   } = useChat();
 
+  useEffect(() => {}, [myChats, selectedChat]);
+
+  const getMessagePreview = msg => {
+    let preview = msg.slice(0, 25);
+    preview += msg.length > 25 ? '...' : '';
+    return preview;
+  };
+
   return (
     <div className="chat-list">
       {myChats.map((c, index) => (
         <div
+          onClick={() => selectChatClick(c)}
           className={`chat-list-item ${
             selectedChat?.id === c.id ? 'selected-chat-item' : ''
           }`}
           key={index}
         >
-          <div
-            onClick={() => selectChatClick(c)}
-            className="chat-list-item-content"
-          >
+          <div className="chat-list-item-content">
             {c.people.length === 1 ? (
               <>
                 <Icon circular inverted color="violet" name="user cancel" />
@@ -41,7 +48,7 @@ const ChatList = () => {
                   <div className="preview-message">
                     {c.last_message.attachments.length
                       ? `${c.last_message.sender.username} sent an attachment`
-                      : c.last_message.text.slice(0, 50) + '...'}
+                      : getMessagePreview(c.last_message.text)}
                   </div>
                 </div>
               </>
@@ -50,13 +57,15 @@ const ChatList = () => {
                 <Icon circular inverted color="brown" name="users" />
                 <div className="chat-list-preview">
                   <div className="preview-username">
-                    {joinUsernames(c.people, chatConfig.userName).slice(0, 50)}
-                    ...
+                    {getGroupChatNames(c.people, chatConfig.userName).slice(
+                      0,
+                      50,
+                    )}
                   </div>
                   <div className="preview-message">
                     {c.last_message.attachments.length
                       ? `${c.last_message.sender.username} sent an attachment`
-                      : c.last_message.text.slice(0, 50) + '...'}
+                      : getMessagePreview(c.last_message.text)}
                   </div>
                 </div>
               </>

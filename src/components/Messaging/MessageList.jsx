@@ -9,6 +9,11 @@ const MessageList = () => {
 
   return (
     <div className="chat-messages">
+      {selectedChat.people.length === 1 && (
+        <div className="empty-room">
+          Chat room empty!! Please add new users. #WeConn
+        </div>
+      )}
       {!!selectedChat.messages.length ? (
         groupMessages(selectedChat.messages).map((m, index) => (
           <div key={index} className="chat-message">

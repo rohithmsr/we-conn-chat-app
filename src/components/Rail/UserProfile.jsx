@@ -24,11 +24,13 @@ const UserProfile = () => {
     <div className="profile-box-item">
       <div className="profile-box-icon">
         <Icon
+          fitted={true}
           name="sign out"
           onClick={() => fb.auth.signOut()}
           className="sign-out"
-          color="blue"
+          color="teal"
         />
+        <span>Sign Out</span>
       </div>
       <div className="profile-box-content">
         {avatar ? (
