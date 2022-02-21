@@ -1,9 +1,9 @@
 import { ErrorMessage, Field } from 'formik';
 
-const FormField = ({ name, label, type = 'text' }) => (
+const FormField = ({ name, label, as = 'input', type = 'text', ...rest }) => (
   <label>
     {label}
-    <Field name={name} type={type} />
+    <Field as={as} name={name} type={type} {...rest} />
     <ErrorMessage className="error" component="div" name={name} />
   </label>
 );
