@@ -16,8 +16,11 @@ const ChatList = () => {
   useEffect(() => {}, [myChats, selectedChat]);
 
   const getMessagePreview = msg => {
-    let preview = msg.slice(0, 25);
-    preview += msg.length > 25 ? '...' : '';
+    let preview = msg.slice(0, 27);
+    if (msg.startsWith('<code>')) {
+      preview = preview.replace('<code>', '');
+    }
+    preview += msg.length > 27 ? '...' : '';
     return preview;
   };
 
