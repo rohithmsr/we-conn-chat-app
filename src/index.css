@@ -152,7 +152,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-  width: 300px;
+  width: 380px;
   background-color: var(--darkpink);
 }
 
@@ -487,15 +487,20 @@ body {
 .profile-box-item {
   background-color: var(--elephant);
   padding: 8px;
+  height: 90px;
+  padding: 16px 32px 16px 32px;
+}
+
+.profile-box-item img {
+  margin: 4px;
 }
 
 .profile-box-content {
   flex: 1;
-  padding: 8px;
   display: flex;
   color: var(--cyan);
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .profile-box-preview {
@@ -511,7 +516,7 @@ body {
 }
 
 .profile-box-icon {
-  padding: 16px 0 0 8px;
+  padding: 4px 0 0 8px;
   display: flex;
   flex-direction: column;
   float: right;
@@ -537,8 +542,8 @@ body {
 }
 
 .profile-box-avatar {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 100%;
 }
 

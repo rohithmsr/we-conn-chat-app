@@ -4,6 +4,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useChat } from '../../hooks/useChat';
 import { useResolved } from '../../hooks/useResolved';
 import { useRef, useState } from 'react';
+import { logoName } from '../../utils/getFiles';
 
 const UserProfile = () => {
   const inputRef = useRef(null);
@@ -69,6 +70,14 @@ const UserProfile = () => {
 
   return (
     <div className="profile-box-item">
+      <Image
+        src={`${process.env.PUBLIC_URL}/${logoName}`}
+        alt="we-conn-logo"
+        size="mini"
+        avatar={true}
+        inline={true}
+        floated="left"
+      />
       <div className="profile-box-icon">
         <Icon
           fitted={true}
@@ -91,7 +100,7 @@ const UserProfile = () => {
 
           <IconGroup className="profile-box-avatar" size="large">
             {chatConfig.avatar ? (
-              <Image src={chatConfig.avatar} avatar />
+              <Image alt="user-avatar" src={chatConfig.avatar} avatar />
             ) : (
               <div className="empty-avatar">
                 {chatConfig.userName[0].toUpperCase()}
@@ -126,7 +135,7 @@ const UserProfile = () => {
           </IconGroup>
 
           <div className="profile-box-preview">
-            <div className="profile-box-username">{chatConfig.userName}</div>
+            <div className="profile-box-username">@{chatConfig.userName}</div>
             <div className="profile-box-email">{email}</div>
           </div>
         </div>

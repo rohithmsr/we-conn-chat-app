@@ -4,6 +4,7 @@ import LeftRail from '../Rail/LeftRail';
 import ChatToolbar from './ChatToolbar';
 import ChatInput from './ChatInput';
 import MessageList from '../Messaging/MessageList';
+import { logoName } from '../../utils/getFiles';
 
 export const Chat = () => {
   const {
@@ -68,7 +69,7 @@ export const Chat = () => {
           ) : (
             <div className="no-chat-selected">
               <img
-                src="look-arrow.png"
+                src={`${process.env.PUBLIC_URL}/${logoName}`}
                 className="no-chat-selected-icon"
                 alt="no-chat-selected-icon"
               />

@@ -2,3 +2,4 @@ export * from './notMe';
 export * from './joinUsernames';
 export * from './groupMessages';
 export * from './getGroupChatNames';
+export * from './getFiles';
